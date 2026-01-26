@@ -75,23 +75,19 @@ const TeamSection = () => {
         </div>
 
         {/* 2. Core Committee Section */}
-        <div className="mb-24">
-          <h3 className="text-center text-xs font-bold uppercase tracking-[0.3em] text-emerald-500/80 mb-12">Core Committee</h3>
-          
-          <div className="flex flex-wrap justify-center gap-8 mb-12">
-            {coreCommittee.slice(0, 2).map((member, index) => (
-              <div key={index} className="w-full max-w-[260px]">
-                <TeamMemberCard {...member} />
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {coreCommittee.slice(2).map((member, index) => (
-              <TeamMemberCard key={index} {...member} />
-            ))}
-          </div>
-        </div>
+{/* 2. Core Committee Section */}
+<div className="mb-24">
+  <h3 className="text-center text-xs font-bold uppercase tracking-[0.3em] text-emerald-500/80 mb-12">
+    Core Committee
+  </h3>
+  
+  {/* Combined into a single uniform grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    {coreCommittee.map((member, index) => (
+      <TeamMemberCard key={index} {...member} />
+    ))}
+  </div>
+</div>
 
         {/* 3. Organizing Committee Section */}
         <div className="bg-white/[0.03] rounded-2xl p-8 md:p-12 border border-white/5">
