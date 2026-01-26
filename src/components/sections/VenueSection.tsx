@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Calendar, Clock, Navigation } from "lucide-react";
+import { MapPin, Calendar, Clock, Navigation, ExternalLink } from "lucide-react";
 
 const VenueSection = () => {
   return (
@@ -18,29 +18,41 @@ const VenueSection = () => {
             Event <span className="gradient-text">Venue</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Join us at the state-of-the-art Innovation Hub for an unforgettable
-            experience.
+            Join us at Ramrao Adik Institute of Technology for an 
+            innovation-packed experience in the heart of Navi Mumbai.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 items-center">
-          {/* Map */}
+          {/* Map - Fixed with Embed API and Precise RAIT Pinpoint */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card overflow-hidden h-80 lg:h-96"
+            className="glass-card overflow-hidden h-80 lg:h-[500px] flex flex-col"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0927955461!2d-122.40143368468185!3d37.78779807975756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807f619a62df%3A0x491ce2f73977af35!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1629892034567!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.481146740698!2d73.0229415!3d19.0436423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3db5e2c85cd%3A0x66c89c8949826071!2sRamrao%20Adik%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
-              style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+              style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) brightness(0.8)" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              title="RAIT Engineering Building Pinpoint"
             />
+            <div className="p-4 bg-muted/50 border-t border-border flex justify-between items-center">
+              <span className="text-sm text-muted-foreground">Ramrao Adik Institute of Technology, Nerul</span>
+              <a 
+                href="https://maps.app.goo.gl/366Qpy1kwdqbktuA7" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-xs text-primary flex items-center gap-1 hover:underline"
+              >
+                View on Google Maps <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
           </motion.div>
 
           {/* Details */}
@@ -58,14 +70,12 @@ const VenueSection = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-semibold text-lg mb-1">
-                    Innovation Hub
+                    Ramrao Adik Institute of Technology
                   </h4>
-                  <p className="text-muted-foreground">
-                    123 Tech Street, Innovation District
+                  <p className="text-sm text-muted-foreground">
+                    Dr. D. Y. Patil Vidyapeeth, Sector 7, Nerul, 
                     <br />
-                    San Francisco, CA 94105
-                    <br />
-                    United States
+                    Navi Mumbai, Maharashtra 400706
                   </p>
                 </div>
               </div>
@@ -81,9 +91,9 @@ const VenueSection = () => {
                     Event Date
                   </h4>
                   <p className="text-muted-foreground">
-                    March 15-16, 2024
+                    March 6-7, 2026
                     <br />
-                    <span className="text-primary">Saturday - Sunday</span>
+                    <span className="text-primary">Thursday - Friday</span>
                   </p>
                 </div>
               </div>
@@ -99,9 +109,9 @@ const VenueSection = () => {
                     Timing
                   </h4>
                   <p className="text-muted-foreground">
-                    Starts: 9:00 AM (Mar 15)
+                    Starts: 9:00 AM (Mar 6)
                     <br />
-                    Ends: 9:00 AM (Mar 16)
+                    Ends: 5:00 PM (Mar 7)
                   </p>
                 </div>
               </div>
@@ -117,9 +127,8 @@ const VenueSection = () => {
                     Getting There
                   </h4>
                   <p className="text-muted-foreground">
-                    Nearest Metro: Tech Plaza Station (5 min walk)
-                    <br />
-                    Parking available on-site
+                    Nearest Station: Nerul / Juinagar (5 min auto)
+                    
                   </p>
                 </div>
               </div>
