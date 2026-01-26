@@ -5,45 +5,39 @@ const faqItems = [
   {
     question: "Who can participate in the hackathon?",
     answer:
-      "The hackathon is open to students, professionals, and enthusiasts from all backgrounds. Whether you're a seasoned developer or just starting your coding journey, everyone is welcome! Participants must be at least 18 years old or have parental consent if under 18.",
-  },
-  {
-    question: "What is the team size requirement?",
-    answer:
-      "Teams can consist of 2-4 members. You can register as an individual and join a team later, or register with your pre-formed team. We also have a team formation channel on Discord to help individuals find teammates before the event.",
+      "Aarohan 1.0 is open to all B.Tech and BCA students. Participants can choose a problem statement within the themes of Crowd management, Agriculture, Education, Healthcare, or Cybersecurity.",
   },
   {
     question: "Is there a registration fee?",
     answer:
-      "No! Participation in the hackathon is completely free. We believe in making innovation accessible to everyone. All you need to bring is your creativity, laptop, and enthusiasm!",
+      "The initial registration fee is 200. Teams that qualify for the top 20 and move on to Round 2 are required to pay an additional fee of 800.",
   },
   {
-    question: "What can I build during the hackathon?",
+    question: "Will accommodation and meals be provided?",
     answer:
-      "You can build any software project that aligns with the announced themes. This includes web apps, mobile apps, APIs, AI/ML models, IoT solutions, or any combination. Hardware-only projects are not eligible, but hardware-software integrations are welcome.",
+      "Yes, the organizers provide all meals, including breakfast, lunch, high tea, and dinner. Accommodation is also arranged for participants on 6th March.",
   },
   {
-    question: "Can I start working on my project before the hackathon?",
+    question: "Do participants receive certificates?",
     answer:
-      "No, all coding must be done during the 24-hour hackathon period. However, you can brainstorm ideas, research technologies, and create wireframes beforehand. Open-source libraries and frameworks are allowed.",
+      "Yes, all Round 1 and 2 participants will receive certificates.",
   },
   {
-    question: "What do I need to submit at the end?",
+    question: "What is the team size requirement?",
     answer:
-      "You'll need to submit: 1) Your source code (via GitHub), 2) A 3-minute demo video, 3) A presentation deck (max 10 slides), and 4) A brief project description. Detailed submission guidelines will be shared during the event.",
+      "Each team must consist of 3-4 members. You will work together to develop a Minimum Viable Product (MVP) based on the solution you proposed in your Round 1 PPT.",
   },
   {
-    question: "How will the judging work?",
+    question: "How does the evaluation process work?",
     answer:
-      "Judging happens in two rounds. Round 1 screens all submissions based on innovation, technical implementation, problem-solution fit, and presentation. Top teams advance to Round 2, where they present live to our panel of industry expert judges.",
+      "Round 1 is a PPT submission evaluated on clarity, innovation, and feasibility. The top 20 teams then move to a 24-hour onsite implementation round (Round 2) held on March 6th and 7th, 2026, where they build and demo their software solution.",
   },
   {
     question: "What are the prizes?",
     answer:
-      "The total prize pool is $50,000! This includes cash prizes for top 3 teams, special category awards, and sponsored prizes. All participants receive certificates, and top performers get exclusive internship and job opportunities with our partner companies.",
+      "There is a total prize pool of 50,000. The top 3 teams across all themes will be awarded based on their performance in the final implementation and demo round.",
   },
 ];
-
 const FAQSection = () => {
   return (
     <section id="faq" className="section-padding relative">
