@@ -12,6 +12,7 @@ import "@fontsource/montserrat/700.css";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
+import WhyJoinSection from "@/components/sections/WhyJoinSection";
 import ThemesSection from "@/components/sections/ThemesSection";
 import TimelineSection from "@/components/sections/TimelineSection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -28,6 +29,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <AboutSection />
+        <WhyJoinSection />
         {/* <ThemesSection /> */}
         <TimelineSection />
        
