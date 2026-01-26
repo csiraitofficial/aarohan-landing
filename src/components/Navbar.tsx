@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import links from "../utils/links.js";
+import aarohanLogo from "/csi_aarohanlogo-removebg.png"
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -84,12 +85,17 @@ const Navbar = () => {
           isScrolled ? "glass-card py-3" : "bg-transparent py-5"
         }`}
       >
-        <div className="container mx-auto px-4 flex items-center justify-between">
+        <div className="container mx-auto px-2 flex items-center justify-between">
           <motion.a
             href="/"
             className="font-heading text-2xl font-bold gradient-text"
             whileHover={{ scale: 1.05 }}
           >
+            {/* <img
+              src={aarohanLogo}
+              alt="AAROHAN logo"
+              className="h-16 w-32 object-contain"
+            /> */}
             AAROHAN
           </motion.a>
 

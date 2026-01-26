@@ -2,12 +2,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, ExternalLink } from "lucide-react";
 import FloatingShapes from "../FloatingShapes";
 import links from "../../utils/links.js";
-const { eventLink } = links;
+import csiLogo from "../../assets/team/committees/csi__logo.png";
+import codersClubLogo from "../../assets/team/committees/codersclub.png";
+import tpcLogo from "../../assets/team/committees/WhiteRAIT.png";
 
 const HeroSection = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const { eventLink } = links;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -81,7 +84,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
         >
           <motion.a
             href={eventLink}
@@ -104,24 +107,45 @@ const HeroSection = () => {
         </motion.div>
 
         {/* Organizer logos placeholder */}
+        {/* Organizer logos */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
-          className="flex items-center justify-center gap-8 flex-wrap"
+          className="flex flex-col items-center justify-center gap-6"
         >
           <span className="text-muted-foreground text-sm">Organized by</span>
-          <div className="flex items-center gap-6">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="w-24 h-10 glass-card rounded-lg flex items-center justify-center text-muted-foreground text-xs"
-              >
-                Logo {i}
-              </div>
-            ))}
+
+          <div className="flex items-center justify-center gap-6 flex-wrap">
+            {/* CSI */}
+            <div className=" px-4 py-3 flex items-center justify-center">
+              <img
+                src={csiLogo}
+                alt="CSI RAIT"
+                className="h-10 md:h-14 w-auto object-contain"
+              />
+            </div>
+
+            {/* Coders Club */}
+            <div className=" px-4 py-3 flex items-center justify-center">
+              <img
+                src={codersClubLogo}
+                alt="Coders Club RAIT"
+                className="h-10 md:h-14 w-auto object-contain"
+              />
+            </div>
+
+            {/* TPC */}
+            <div className=" px-4 py-3 flex items-center justify-center">
+              <img
+                src={tpcLogo}
+                alt="Training & Placement Cell RAIT"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
+            </div>
           </div>
         </motion.div>
+
       </motion.div>
 
       {/* Scroll indicator */}
@@ -129,7 +153,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-2 left-1/2 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
