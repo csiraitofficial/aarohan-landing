@@ -3,40 +3,28 @@ import TimelineItem from "../TimelineItem";
 
 const timelineData = [
   {
-    title: "Registration Opens",
-    description: "Sign up on Unstop and form your team of up to 4 members. Early birds get exclusive swag!",
-    date: "Feb 15, 2024",
-    time: "12:00 PM IST",
+    title: "Registration",
+    description: "Registrations open for all eligible participants. Sign up to secure your spot.",
+    date: "Feb 2026",
+    time: "Opening Soon",
   },
   {
-    title: "Registration Closes",
-    description: "Last call for team registrations. Make sure your team is complete and ready.",
-    date: "Mar 1, 2024",
+    title: "Round 1",
+    description: "Registrations close. Teams must submit their PPT within the given timeline.",
+    date: "Feb 20, 2026",
     time: "11:59 PM IST",
   },
   {
-    title: "Hackathon Begins",
-    description: "Opening ceremony, theme announcement, and the 24-hour countdown starts!",
-    date: "Mar 15, 2024",
-    time: "9:00 AM IST",
+    title: "Round 1 Results",
+    description: "Results and shortlisted teams for Round 2 will be announced.",
+    date: "Feb 28, 2026",
+    time: "TBA",
   },
   {
-    title: "Submission Deadline",
-    description: "Submit your project including source code, demo video, and presentation deck.",
-    date: "Mar 16, 2024",
-    time: "9:00 AM IST",
-  },
-  {
-    title: "Judging Phase",
-    description: "Expert judges evaluate all submissions based on innovation, impact, and execution.",
-    date: "Mar 16-17, 2024",
-    time: "All Day",
-  },
-  {
-    title: "Winner Announcement",
-    description: "Grand finale ceremony with prize distribution and networking session.",
-    date: "Mar 18, 2024",
-    time: "5:00 PM IST",
+    title: "Round 2",
+    description: "Live event: Shortlisted teams build an MVP, present their solution, and showcase a working demo to the judges.",
+    date: "Mar 6-7, 2026",
+    time: "Live Session",
   },
 ];
 
