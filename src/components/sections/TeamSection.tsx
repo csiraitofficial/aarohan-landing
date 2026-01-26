@@ -1,105 +1,109 @@
-import { motion } from "framer-motion";
 import TeamMemberCard from "../TeamMemberCard";
 
-const teamMembers = [
+const facultyCoordinators = [
   {
-    name: "Riddhi Bhanushali",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
+    name: "Dr. Amarsinh V. Vidhate",
+    role: "Student Branch Coordinator",
+    image: "/vidhate sir.jpeg", 
   },
   {
-    name: "Prerna Agarwal",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face",
+    name: "Dr. Tushar Ghorpade",
+    role: "Faculty Coordinator",
+    image: "/tushar sir.jpeg", 
   },
-  {
-    name: "Sejal Jaiswar",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    name: "Parth Patil",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    name: "Vishwajeet Patil",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    name: "Shalin Prashant",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    name: "Austin Kurian",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    name: "Jatin Pathak",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    name: "Drishya Tomar",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    name: "Ayush Sharma",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    name: "Sahil Jain",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    name: "Aadarsh Kumar",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    name: "Krishna Bhanushali",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    name: "Harshvardhan Singh",
-    role: "Organizer",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
-  },
+  
 ];
+
+const coreCommittee = [
+  { name: "Riddhi Bhanushali", role: "President", image: "/president.jpg" },
+  { name: "Prerna Agarwal", role: "Vice President", image: "/vp.jpg" },
+  { name: "Sejal Jaiswar", role: "General Secretary", image: "/gs.JPEG" },
+  { name: "Parth Patil", role: "Treasurer", image: "/treasurer.JPG" },
+  { name: "Vishwajeet Patil", role: "Chief Technical Officer", image: "/cto.jpg" },
+  { name: "Shalin Prashant", role: "Chief Event Organizer", image: "/ceo.jpg" },
+  { name: "Austin Kurian", role: "Joint Secretary", image: "/js.JPG" }, 
+  { name: "Jatin Pathak", role: "Joint Technical Officer", image: "/jto.JPG" },
+  { name: "Sahil Jain", role: "Chief Marketing Officer", image: "/cmo.jpeg" }, // Note: Assuming filename follow pattern if not visible
+  { name: "Aadarsh Kumar", role: "Human Resources", image: "/hr.jpeg" },
+  { name: "Krishna Bhanushali", role: "Editor-in-Chief", image: "/eic.jpg" },
+  { name: "Drishya Tomar", role: "Chief Design Officer", image: "/cdo.jpg" },
+  { name: "Ayush Sharma", role: "Chief of Research & Development", image: "/crdo.JPG" },
+  { name: "Harshvardhan Singh", role: "Database Administrator", image: "/dba.jpg" },
+];
+
+const organizingCommittee = [
+  "NEEL VAZE", "Naresh Konar", "Vedika Pathak", "Harsh Prajapat", "VED MANANI", 
+  "Josh Mahamunkar", "Swara Kalekar", "Niharika Yadav", "Rachana Bera", "Fardeen Desai", 
+  "Kanak Maghnani", "Aditi Bhagat", "Akshat Muchhala", "Gaurav Vojhala", "Divyanshi", 
+  "Soham Pandey", "Akshat Matkar", "Nisarg Mokal", "Jignesh Parmar", "Archana Dash", 
+  "Yuti Rawool", "Kavya Huliyurdurga", "Mohit Dadhich", "Rushil Vishwakarma", "Mihir Kulkarni", 
+  "Shreeya Khadka", "Aaditya Ajit Singh", "GAURANG RANEA", "Aryan Yadav", "Aashi Jain", 
+  "Nishika", "Adeeba Mujawar", "Hamsini kuppam", "Bhumi Yadav", "SARAH SAWANT", 
+  "Atharva Bhoir", "Rushikesh Patle", "Shreyas Apte", "zidane madre", "Yashana Gupta", 
+  "Lakshmi Kamath", "SAEE SALUNKHE", "Ashish Singh", "Atharva chaudhari"
+];
+
+// Helper to format names to Title Case
+const formatName = (str) => {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};
 
 const TeamSection = () => {
   return (
-    <section id="team" className="section-padding relative">
-      <div className="absolute inset-0 mesh-gradient opacity-20" />
-
-      <div className="container mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+    <section id="team" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
           <h2 className="section-title">
-            Meet the <span className="gradient-text">Team</span>
+            The Faces behind <span className="gradient-text">AAROHAN 1.0</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            The passionate individuals behind AAROHAN who work
-            tirelessly to make this event a success.
-          </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {teamMembers.map((member, index) => (
-            <TeamMemberCard key={index} {...member} index={index} />
-          ))}
+        {/* 1. Faculty Section */}
+        <div className="mb-24">
+          <h3 className="text-center text-xs font-bold uppercase tracking-[0.3em] text-emerald-500/80 mb-10">Faculty Leadership</h3>
+          <div className="flex flex-wrap justify-center gap-8">
+            {facultyCoordinators.map((member, index) => (
+              <div key={index} className="w-full max-w-[260px]">
+                <TeamMemberCard {...member} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 2. Core Committee Section */}
+        <div className="mb-24">
+          <h3 className="text-center text-xs font-bold uppercase tracking-[0.3em] text-emerald-500/80 mb-12">Core Committee</h3>
+          
+          <div className="flex flex-wrap justify-center gap-8 mb-12">
+            {coreCommittee.slice(0, 2).map((member, index) => (
+              <div key={index} className="w-full max-w-[260px]">
+                <TeamMemberCard {...member} />
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {coreCommittee.slice(2).map((member, index) => (
+              <TeamMemberCard key={index} {...member} />
+            ))}
+          </div>
+        </div>
+
+        {/* 3. Organizing Committee Section */}
+        <div className="bg-white/[0.03] rounded-2xl p-8 md:p-12 border border-white/5">
+          <h3 className="text-center text-xs font-bold uppercase tracking-[0.3em] text-emerald-500/80 mb-10">Organizing Committee</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-8">
+            {organizingCommittee.map((name, index) => (
+              <div key={index} className="text-gray-400 text-sm md:text-base flex items-center gap-2">
+                <span className="h-1 w-1 bg-emerald-500/50 rounded-full" />
+                {formatName(name)}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
