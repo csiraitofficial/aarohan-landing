@@ -8,7 +8,7 @@ const navLinks = [
   { name: "About", href: "#about" },
   { name: "Themes", href: "/themes" },
   { name: "Timeline", href: "#timeline" },
-  { name: "Team", href: "#team" },
+  { name: "Team", href: "/team" },
   { name: "Venue", href: "#venue" },
   { name: "Contact", href: "#contact" },
 ];
@@ -25,7 +25,8 @@ const Navbar = () => {
   /* -------------------- Scroll Spy (Home only) -------------------- */
   useEffect(() => {
     if (!isHomePage) {
-      setActiveSection("themes");
+      const path = window.location.pathname.replace("/", "");
+      setActiveSection(path);
       return;
     }
 
