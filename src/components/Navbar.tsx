@@ -9,6 +9,7 @@ const navLinks = [
   { name: "Themes", href: "/themes" },
   { name: "Timeline", href: "#timeline" },
   { name: "Team", href: "/team" },
+  {name: "Venue", href: "/contact"},
   { name: "Contact", href: "/contact" },
 ];
 
