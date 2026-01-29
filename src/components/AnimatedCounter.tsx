@@ -1,15 +1,14 @@
-import { useEffect, useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useEffect, useState, useRef, memo } from "react";
 
 interface AnimatedCounterProps {
   end: number;
   duration?: number;
   prefix?: string;
   suffix?: string;
-  label: string;
+  label?: string;
 }
 
-const AnimatedCounter = ({
+const AnimatedCounter = memo(({
   end,
   duration = 2,
   prefix = "",
@@ -17,56 +16,67 @@ const AnimatedCounter = ({
   label,
 }: AnimatedCounterProps) => {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const ref = useRef<HTMLDivElement>(null);
   const hasAnimated = useRef(false);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    if (isInView && !hasAnimated.current) {
-      hasAnimated.current = true;
-      const startTime = Date.now();
-      const endTime = startTime + duration * 1000;
+    const element = ref.current;
+    if (!element) return;
 
-      const animate = () => {
-        const now = Date.now();
-        const progress = Math.min((now - startTime) / (duration * 1000), 1);
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        const currentCount = Math.floor(easeOut * end);
-        setCount(currentCount);
+    observerRef.current = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          
+          const startTime = performance.now();
+          const durationMs = duration * 1000;
 
-        if (now < endTime) {
+          const animate = (currentTime: number) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / durationMs, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            
+            setCount(Math.floor(easeOut * end));
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              setCount(end);
+            }
+          };
+
           requestAnimationFrame(animate);
-        } else {
-          setCount(end);
         }
-      };
+      },
+      { threshold: 0.1, rootMargin: "-50px" }
+    );
 
-      requestAnimationFrame(animate);
-    }
-  }, [isInView, end, duration]);
+    observerRef.current.observe(element);
 
-  const formatNumber = (num: number) => {
-    return num.toLocaleString();
-  };
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [end, duration]);
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5 }}
-      className="text-center"
-    >
+    <div ref={ref} className="text-center">
       <div className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold gradient-text mb-2">
         {prefix}
-        {formatNumber(count)}
+        {count.toLocaleString()}
         {suffix}
       </div>
-      <div className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
-        {label}
-      </div>
-    </motion.div>
+      {label && (
+        <div className="text-muted-foreground font-medium uppercase tracking-wider text-sm">
+          {label}
+        </div>
+      )}
+    </div>
   );
-};
+});
+
+AnimatedCounter.displayName = 'AnimatedCounter';
 
 export default AnimatedCounter;
